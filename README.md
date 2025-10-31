@@ -2,7 +2,7 @@
 
 API RESTful desarrollada con **.NET 8** que permite realizar operaciones CRUD sobre productos.  
 Construida bajo una arquitectura por capas limpias (Clean Architecture) y conectada a una base de datos **MySQL**.  
-Integra un frontend desarrollado en **Angular 18**, desplegado en **Azure Static Web Apps**.
+Integra un frontend desarrollado en **Angular 18**.
 
 ---
 ## Product-App
@@ -54,10 +54,10 @@ Archivo: **`Program.cs`**
 `dotnet run`
 
 Por defecto, la API se ejecuta en:
-`URL: https://localhost:7110/`
+URL: https://localhost:7110/
 
 Para la documentacion se realiza con Swagger de manera local
-`URL: https://localhost:7110/swagger`
+URL: https://localhost:7110/swagger
 
 
 ### Frontend
@@ -86,15 +86,15 @@ npm install
 ng serve
 ```
 La aplicacion se ejecutara por defecto en:
-`http://localhost:4200`
+http://localhost:4200
 
 ## Despliegue en Azure
 
 **Backend (API)** esta en un **Azure App Service** y
-la `URL: https://technical-test-api-h7bxdybuhqcce6dk.canadacentral-01.azurewebsites.net/api/Product`
+la URL: https://technical-test-api-h7bxdybuhqcce6dk.canadacentral-01.azurewebsites.net/api/Product
 
 **Frontend(App)** esta en un **Azure Static Web Apps** y
-la `URL: https://orange-bush-0a7574d1e.3.azurestaticapps.net/`
+la URL: https://orange-bush-0a7574d1e.3.azurestaticapps.net/
 
 **DATABASE** esta creado en **Azure MySQL Database**
 
@@ -129,20 +129,26 @@ dotnet add package Microsoft.EntityFrameworkCore.Tools
  ```
 
 ### 3. Actualizar el contexto en program.cs
-**SQL:`UseSqlServer`** 
+**SQL:`UseSqlServer`**
+```bash
+builder.Services.AddDbContext<ApplicacionDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+``` 
 **SQLite:`UseSqlite`**
 
+```bash
 builder.Services.AddDbContext<ApplicacionDbContext>(options =>
-    options.`Aqui`(builder.Configuration.GetConnectionString("DefaultConnection"))
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
-
+```
 ## Analisis Final
 
-    Trate de utilizar un entorno lo mas profecional usando herramientas como Azure, todo el ambiente gitflow y demas, aprendi mucho realizando este CRUD ya sea en backend o frontend.
-    El proyecto esta 100% funcional la parte de frontend consume correctamente el backend y lo pueden probar en las URL de los datos
-
+    Trate de utilizar un entorno lo mas profecional usando herramientas como Azure y 
+    todo el ambiente gitflow y demas, aprendi mucho realizando este CRUD ya sea en backend o frontend.
+    El proyecto esta 100% funcional la parte de frontend consume correctamente el backend y lo pueden probar en las URLs de Azure.
 ## Autor
 
 Daniel Picado Abarca
 Desarrollador Web & Programador de Software
-`Github: https://github.com/danock31`
+Github: https://github.com/danock31
