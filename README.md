@@ -39,6 +39,7 @@ El proyecto sigue una estructura basada en **Clean Architecture**, separando la 
 
 #### Configuracion de la base de datos
 
+La conexion hacia base de datos no esta implementada de la mejor manera y soy conciente de eso, pero por motivos de tiempo la realice en la forma mas basica pero se que hay formas mucho mas seguras y estables para realizarlo.
 Archivos: **`appsettings.json`**//**`Program.cs`**
 
 #### Uso de CORS
