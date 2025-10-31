@@ -47,11 +47,12 @@ Configurado para permitir unicamente peticiones desde el frontend en Azure
 Archivo: **`Program.cs`**
 
 #### Ejecucion local 
-
-`git clone https://github.com/danock31/technical-test-api.git`
-`cd technical-test-api`
-`dotnet restore`
-`dotnet run`
+```bash
+git clone https://github.com/danock31/technical-test-api.git
+cd technical-test-api
+dotnet restore
+dotnet run
+```
 
 Por defecto, la API se ejecuta en:
 URL: https://localhost:7110/
